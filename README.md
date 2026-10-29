@@ -32,3 +32,18 @@ Los proyectos y medios son ejemplos de presentación y deben revisarse/reemplaza
 Coloca tu fotografía en `assets/mi-foto.jpg`. El espacio reservado se convierte automáticamente en imagen; si el archivo no existe, se muestra una guía de reemplazo. Usa una foto vertical de buena calidad (idealmente 4:5).
 
 Esta edición suaviza el lenguaje gamer, reduce el neón y agrega una sección editorial horizontal para presentar el perfil.
+
+## Cambios de esta versión
+- Guardado local con `localStorage`, sincronización automática entre pestañas del mismo origen y refresco de las galerías tras guardar.
+- Confirmaciones y edición mediante diálogos propios del diseño; sin `alert()`, `confirm()` ni `prompt()` para la gestión del contenido.
+- Ajustes responsive para el panel, formularios, tarjetas y ventana de vista previa en móvil.
+
+**Límite importante:** este proyecto sigue siendo HTML/CSS/JS estático. El contenido editado queda guardado en el navegador y no se publica automáticamente en GitHub Pages/Netlify ni se comparte con visitantes en otros dispositivos. Para gestión real del sitio hace falta una API con autenticación y una base de datos (por ejemplo Supabase) y conectar este panel a ese servicio.
+
+## Versión 5: carga de imágenes y video
+- Desde Administración se puede arrastrar y soltar o seleccionar una foto de perfil. La imagen se aplica al Hero sin editar archivos.
+- Se pueden subir imágenes de portada de proyectos y elementos de la galería, o continuar usando una URL HTTPS.
+- Imágenes rasterizadas se reducen a un máximo de 1600 px y se convierten a WebP para reducir tamaño; GIF y SVG se conservan sin conversión.
+- Para videos, se admite URL directa compatible (por ejemplo MP4/WebM), enlaces de YouTube y Vimeo; también se permite subir archivos pequeños de hasta 5 MB.
+- Los enlaces externos de imágenes deben ser públicos y directos al archivo para que puedan visualizarse. Google Drive/Dropbox pueden requerir enlaces de descarga directa; una página de vista previa no siempre sirve como imagen.
+- Las cargas se guardan en el almacenamiento del navegador actual. Para publicarlas a todos los visitantes y compartirlas entre dispositivos hace falta almacenamiento remoto y backend.

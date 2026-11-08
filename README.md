@@ -25,3 +25,10 @@ La migración crea políticas públicas de lectura únicamente para filas marcad
 
 ## Pruebas realizadas
 Esta entrega contiene cambios de código y una migración SQL. La integración en vivo con Google Drive/OneDrive no puede certificarse sin probar enlaces reales con los permisos de cada cuenta. Ejecuta la migración antes de desplegar; sin esas tablas, la carga pública de contenido devolverá error.
+
+
+## Corrección de guardado en Redes
+
+Se corrigió la inserción del formulario de administración. Antes, al guardar un perfil social, el código enviaba `social` como nombre de tabla (`sb.from(tab)`), aunque la tabla real definida por la migración es `public.social_profiles`. Ahora la inserción usa el mismo mapeo que las consultas, edición y eliminación: `tableName()`.
+
+No es necesario crear una tabla llamada `public.social`. La tabla correcta es `public.social_profiles`. Si la migración anterior ya se ejecutó y la sección Redes carga correctamente, basta con reemplazar `app.js` y publicar la actualización. Si aún no se ejecutó, ejecuta primero `supabase-migration-social-certifications.sql` en Supabase SQL Editor.

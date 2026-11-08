@@ -43,3 +43,7 @@ create policy "Authenticated users manage certifications" on public.certificatio
 -- Si el bucket ya existe, actualizar desde Storage > Buckets > portfolio-media:
 -- Allowed MIME types: image/*, video/mp4, video/webm, video/ogg, application/pdf
 -- File size limit recomendado: 50 MB (certificaciones: el panel limita a 20 MB).
+
+
+-- Solicitar a PostgREST que actualice su caché de esquema.
+notify pgrst, 'reload schema';

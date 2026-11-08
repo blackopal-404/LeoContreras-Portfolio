@@ -32,3 +32,7 @@ Esta entrega contiene cambios de código y una migración SQL. La integración e
 Se corrigió la inserción del formulario de administración. Antes, al guardar un perfil social, el código enviaba `social` como nombre de tabla (`sb.from(tab)`), aunque la tabla real definida por la migración es `public.social_profiles`. Ahora la inserción usa el mismo mapeo que las consultas, edición y eliminación: `tableName()`.
 
 No es necesario crear una tabla llamada `public.social`. La tabla correcta es `public.social_profiles`. Si la migración anterior ya se ejecutó y la sección Redes carga correctamente, basta con reemplazar `app.js` y publicar la actualización. Si aún no se ejecutó, ejecuta primero `supabase-migration-social-certifications.sql` en Supabase SQL Editor.
+
+
+## Mejora de vista previa de redes sociales
+Los perfiles de Instagram, Facebook, YouTube y LinkedIn ya no se cargan en un iframe vacío. El overlay muestra una tarjeta de perfil con plataforma, descripción y enlace directo. Esto evita el área blanca causada por `about:blank` y por las políticas anti-iframe de las redes sociales. Los sitios web y los PDF mantienen su vista previa integrada.

@@ -36,3 +36,10 @@ No es necesario crear una tabla llamada `public.social`. La tabla correcta es `p
 
 ## Mejora de vista previa de redes sociales
 Los perfiles de Instagram, Facebook, YouTube y LinkedIn ya no se cargan en un iframe vacío. El overlay muestra una tarjeta de perfil con plataforma, descripción y enlace directo. Esto evita el área blanca causada por `about:blank` y por las políticas anti-iframe de las redes sociales. Los sitios web y los PDF mantienen su vista previa integrada.
+
+
+## Ajustes solicitados (noviembre 2026)
+- Los perfiles sociales publicados ahora también aparecen dentro de "Todo el trabajo" y en el filtro "Redes" de Proyectos.
+- Al abrir un perfil social, el overlay intenta cargar la URL real dentro del iframe y mantiene un botón visible para abrir el perfil en una pestaña nueva.
+- Nota importante: Instagram, Facebook y LinkedIn pueden impedir la carga en iframe mediante políticas del propio proveedor (X-Frame-Options / Content-Security-Policy). Ningún cambio en el sitio puede anular esas restricciones del navegador/proveedor; en esos casos el botón externo es la vía fiable.
+- Se añadieron reglas responsive para evitar desbordamiento horizontal en móvil y mantener el botón flotante de WhatsApp por encima del contenido, respetando las áreas seguras del dispositivo.

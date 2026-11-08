@@ -195,3 +195,6 @@ main,.section-shell,.projects,.contact-section,footer{max-width:100%;min-width:0
  .social-profile-preview{width:100%;max-width:100%;box-sizing:border-box}
  .social-preview-url{overflow-wrap:anywhere}
 }
+
+.social-card-preview{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px 12px 0 0;margin:-1px -1px 14px;max-width:calc(100% + 2px)}
+.social-project-image{object-fit:cover}

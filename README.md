@@ -43,3 +43,11 @@ Los perfiles de Instagram, Facebook, YouTube y LinkedIn ya no se cargan en un if
 - Al abrir un perfil social, el overlay intenta cargar la URL real dentro del iframe y mantiene un botón visible para abrir el perfil en una pestaña nueva.
 - Nota importante: Instagram, Facebook y LinkedIn pueden impedir la carga en iframe mediante políticas del propio proveedor (X-Frame-Options / Content-Security-Policy). Ningún cambio en el sitio puede anular esas restricciones del navegador/proveedor; en esos casos el botón externo es la vía fiable.
 - Se añadieron reglas responsive para evitar desbordamiento horizontal en móvil y mantener el botón flotante de WhatsApp por encima del contenido, respetando las áreas seguras del dispositivo.
+
+
+## Imagen opcional para tarjetas de perfiles sociales
+- El formulario de Redes conserva la opción de adjuntar una imagen y ahora permite indicar una URL directa de imagen en el campo opcional de vista previa.
+- Si se proporciona una URL, se utiliza como miniatura de la tarjeta tanto en Proyectos como en la sección Redes. No es necesario subir una segunda imagen de portada.
+- Si no se proporciona imagen, se mantiene la tarjeta gráfica con el icono de la plataforma.
+- La imagen puede ser una URL pública directa (por ejemplo JPG, PNG, WEBP) o un enlace de Google Drive que permita obtener vista previa; la disponibilidad depende de permisos y del formato compartido.
+- Se añadió `image_url` a `public.social_profiles`. Ejecuta la migración SQL actualizada en Supabase para agregar la columna a una tabla ya existente.
